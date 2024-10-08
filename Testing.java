@@ -67,8 +67,9 @@ public class Testing {
         // TODO: Create a new CaesarKey("TIN"), encrypt the message "HELLO" and check the
         //       result's accurate. Then, take the encrypted message, decrypt it, and
         //       check the result's accurate
-        assertEquals(true, false, "Assertion 1 not yet implemented!");
-        assertEquals(true, false, "Assertion 2 not yet implemented!");
+        Cipher testCaesarKey = new CaesarKey("TIN");
+        assertEquals("EBJJM", testCaesarKey.encrypt("HELLO"));
+        assertEquals("HELLO", testCaesarKey.decrypt("EBJJM"));
     }
 
     @Test
@@ -80,8 +81,10 @@ public class Testing {
         // TODO: Create a new CaesarShift(6), encrypt the message "HELLO" and check the
         //       result's accurate. Then, take the encrypted message, decrypt it, and
         //       check the result's accurate
-        assertEquals(true, false, "Assertion 1 not yet implemented!");
-        assertEquals(true, false, "Assertion 2 not yet implemented!");
+        
+        Cipher testCaesarShift = new CaesarShift(6);
+        assertEquals("NKRRU", test.encrypt("HELLO"));
+        assertEquals("HELLO", test.decrypt("NKRRU"));
     }
 
     @Test
@@ -93,7 +96,8 @@ public class Testing {
         // TODO: Create a new MultiCipher with ciphers CaesarKey("TIN") and CaesarShift(6)),
         //       encrypt the message "HELLO", and check the result's accurate. Then, take
         //       the encrypted message, decrypt it, and check the result's accurate
-        assertEquals(true, false, "Assertion 1 not yet implemented!");
-        assertEquals(true, false, "Assertion 2 not yet implemented!");
+        Cipher testMultiCipher = new MultiCipher(List.of(new CaesarKey("TIN"), new CaesarShift(6)));
+        assertEquals("KHPPS", testMultiCipher.encrypt("HELLO"));
+        assertEquals("HELLO", testMultiCipher.decrypt("KHPPS"));
     }
 }
