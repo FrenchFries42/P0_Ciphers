@@ -20,8 +20,8 @@ public class MultiCipher extends Cipher {
 
     public String decrypt (String input) {
         String tempInput = input;
-        for (Cipher cipher: ciphers) {
-            tempInput = cipher.decrypt(tempInput);
+        for (int i = ciphers.size() - 1; i >= 0; i--) {
+            tempInput = ciphers.get(i).decrypt(tempInput);
         }
         return tempInput;
     }

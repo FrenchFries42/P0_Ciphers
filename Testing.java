@@ -83,8 +83,8 @@ public class Testing {
         //       check the result's accurate
         
         Cipher testCaesarShift = new CaesarShift(6);
-        assertEquals("NKRRU", test.encrypt("HELLO"));
-        assertEquals("HELLO", test.decrypt("NKRRU"));
+        assertEquals("NKRRU", testCaesarShift.encrypt("HELLO"));
+        assertEquals("HELLO", testCaesarShift.decrypt("NKRRU"));
     }
 
     @Test
