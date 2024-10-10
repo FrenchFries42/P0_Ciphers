@@ -1,6 +1,12 @@
 import java.util.*;
 import java.io.*;
 
+// Jeffrey Tso
+// 10/9/2024
+// CSE 123
+// Programming Assignment 0: Ciphers
+// Sean Eglip
+
 // Represents a classical cipher that is able to encrypt a plaintext into a ciphertext, and
 // decrypt a ciphertext into a plaintext. Also capable of encrypting and decrypting entire files
 public abstract class Cipher {

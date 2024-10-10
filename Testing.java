@@ -3,6 +3,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assume.assumeTrue;
 import java.util.*;
 
+// Jeffrey Tso
+// 10/9/2024
+// CSE 123
+// Programming Assignment 0: Ciphers
+// Sean Eglip
+
 public class Testing {
 
     @Test

@@ -6,10 +6,10 @@ import java.util.*;
 // Programming Assignment 0: Ciphers
 // Sean Eglip
 
-// CaesarShift creates a specific shifter given a shift integer to be used in Substitution's
-// encrpyt and decrypt methods. The shifter is created by moving all 
-// characters within the encodable range to the left a certain amount of times, 
-// moving the value at the front to the end each time.
+// Given a 'shift' integer, CaesarShift, a subclass of Substitution, creates a specific 
+// type of shifter to be used in Substitution's encrpyt and decrypt methods. The shifter 
+// is created by moving all characters within the encodable range to the left 'shift' amount 
+// of times, moving the value at the front to the end each time.
 
 public class CaesarShift extends Substitution {
 
@@ -20,7 +20,7 @@ public class CaesarShift extends Substitution {
     // Exceptions:
     //      - Throws an IllegalArgumentException if the shift value is less than or equal to 0.
     // Parameter:
-    //      - Takes in a shift (int) value.
+    //      - Takes a shift (int) value.
     public CaesarShift(int shift) {
         if (shift <= 0) {
             throw new IllegalArgumentException("The shift value must be greater than 0.");

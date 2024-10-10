@@ -36,7 +36,7 @@ public class Substitution extends Cipher {
         this.shifter = shifter;
     }
 
-    // Takes a shifter (String) as a parameter to be checked for the following conditions:
+    // Takes a shifter (String) as a parameter to be checked for certain conditions.
     // Throws an IllegalArgumentException if the length of the shifter doesn't match the number 
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
@@ -67,10 +67,10 @@ public class Substitution extends Cipher {
     }
 
     // Behavior: 
-    //      - encrypts an input (String) by substituting each corresponding input 
+    //      - Encrypts an input (String) by substituting each corresponding input 
     //      - character with their own unique output character. This correspondence is
-    //      - derived by matching each character of the TOTAL_CHAR
-    //      - list (where the input is contained) with a character from the shifter field.
+    //      - derived by matching each character of the TOTAL_CHAR list (the input) with a 
+    //      - character from the shifter field (the output).
     // Exceptions:
     //      - Throws an IllegalStateException if the shifter field is empty.
     // Return:
@@ -91,10 +91,10 @@ public class Substitution extends Cipher {
     }
 
     // Behavior: 
-    //      - encrypts an input (String) by substituting each corresponding input 
+    //      - Decrypts an input (String) by substituting each corresponding input 
     //      - character with their own unique output character. This correspondence is
-    //      - derived by matching each character of the shifter field
-    //      - (where the input is contained) with a character from the TOTAL_CHAR list.
+    //      - derived by matching each character of the shifter field (the input) with a 
+    //      - character from the TOTAL_CHAR list (the output).
     // Exceptions:
     //      - Throws an IllegalStateException if the shifter field is empty.
     // Return:

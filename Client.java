@@ -1,8 +1,13 @@
 import java.util.*;
 import java.io.*;
 
+// Jeffrey Tso
+// 10/9/2024
+// CSE 123
+// Programming Assignment 0: Ciphers
+// Sean Eglip
+
 public class Client {
-    // TODO: Change this line once you've implemented a cipher!
     // public static final Cipher CHOSEN_CIPHER = null;
     public static final Cipher CHOSEN_CIPHER = new MultiCipher(List.of(
         new CaesarShift(4), new CaesarKey("123"),
