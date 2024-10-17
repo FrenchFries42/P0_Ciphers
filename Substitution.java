@@ -23,8 +23,7 @@ public class Substitution extends Cipher {
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
     public Substitution(String shifter) {
-        checkShifter(shifter);
-        this.shifter = shifter;
+        setShifter(shifter);
     }
 
     // Sets the shifter field to the passed shifter (String).
@@ -40,7 +39,7 @@ public class Substitution extends Cipher {
     // Throws an IllegalArgumentException if the length of the shifter doesn't match the number 
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
-    public void checkShifter(String shifter) {
+    private void checkShifter(String shifter) {
         if (shifter.length() != Cipher.TOTAL_CHARS) {
             throw new IllegalArgumentException("Shifter length should match the" 
                             + " number of characters within the encodable range.");
@@ -68,15 +67,14 @@ public class Substitution extends Cipher {
 
     // Behavior: 
     //      - Encrypts an input (String) by substituting each corresponding input 
-    //      - character with their own unique output character. This correspondence is
-    //      - derived by matching each character of the TOTAL_CHAR list (the input) with a 
-    //      - character from the shifter field (the output).
+    //      - character with their own unique output character.
     // Exceptions:
     //      - Throws an IllegalStateException if the shifter field is empty.
     // Return:
     //      - Returns the encrypted string
     // Parameters:
-    //      - Takes a String input to be encrypted
+    //      - Takes a String input to be encrypted. The input should be non-null
+    //      - and all characters in the input should be within the encodable range.
     public String encrypt(String input) {
         if (shifter == "") {
             throw new IllegalStateException("Shifter was never set.");
@@ -92,15 +90,14 @@ public class Substitution extends Cipher {
 
     // Behavior: 
     //      - Decrypts an input (String) by substituting each corresponding input 
-    //      - character with their own unique output character. This correspondence is
-    //      - derived by matching each character of the shifter field (the input) with a 
-    //      - character from the TOTAL_CHAR list (the output).
+    //      - character with their own unique output character.
     // Exceptions:
     //      - Throws an IllegalStateException if the shifter field is empty.
     // Return:
     //      - Returns the decrypted string
     // Parameters:
-    //      - Takes a String input to be decrypted
+    //      - Takes a String input to be decrypted. The input should be non-null
+    //      - and all characters in the input should be within the encodable range.
     public String decrypt(String input) {
         if (shifter == "") {
             throw new IllegalStateException("Shifter was never set.");

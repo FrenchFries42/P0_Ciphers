@@ -6,14 +6,13 @@ import java.util.*;
 // Programming Assignment 0: Ciphers
 // Sean Eglip
 
-// This class allows for the chaining of multiple Cipher encrypt/decrypt methods by interating
+// This class allows for the chaining of multiple Cipher encrypt/decrypt methods by iterating
 // through a passed list of ciphers and passing their method outputs into the next cipher's method.
 public class MultiCipher extends Cipher {
     private List<Cipher> ciphers;
 
     // This constructor takes a list (List<Cipher>) of ciphers and initializes
-    // the ciphers field with the passed list. It throws an IllegalArgumentException
-    // if the passed list is null.
+    // the ciphers field. It throws an IllegalArgumentException if the passed list is null.
     public MultiCipher(List<Cipher> ciphers) {
         if (ciphers == null) {
             throw new IllegalArgumentException("List should not be null.");
@@ -27,7 +26,9 @@ public class MultiCipher extends Cipher {
     // Return:
     //      - Returns the output of the final cipher's encrypt method.
     // Parameter:
-    //      - Takes an input (String) to be encrypted by all the ciphers in the ciphers list.
+    //      - Takes an input (String) to be encrypted by all the ciphers in the ciphers list. 
+    //      - The input should be non-null and all characters in the
+    //      - input should be within the encodable range.
     public String encrypt (String input) {
         String tempInput = input;
         for (Cipher cipher: ciphers) {
@@ -43,6 +44,8 @@ public class MultiCipher extends Cipher {
     //      - Returns the output of the final cipher's decrypt method.
     // Parameter:
     //      - Takes an input (String) to be decrypted by all the ciphers in the ciphers list.
+    //      - The input should be non-null and all characters in the
+    //      - input should be within the encodable range.
     public String decrypt (String input) {
         String tempInput = input;
         for (int i = ciphers.size() - 1; i >= 0; i--) {
