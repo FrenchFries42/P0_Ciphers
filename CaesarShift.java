@@ -7,9 +7,7 @@ import java.util.*;
 // Sean Eglip
 
 // Given a 'shift' integer, CaesarShift, a subclass of Substitution, creates a specific 
-// type of shifter to be used in Substitution's encrpyt and decrypt methods. The shifter 
-// is created by moving all characters within the encodable range to the left 'shift' amount 
-// of times, moving the value at the front to the end each time.
+// type of shifter to be used in Substitution's encrpyt and decrypt methods.
 
 public class CaesarShift extends Substitution {
 

@@ -4,9 +4,8 @@
 // Programming Assignment 0: Ciphers
 // Sean Eglip
 
-// Given a key, CaesarKey, a subclass of Substitution, creates a specific type of shifter to be 
-// used in substitution's encrypt and decrypt methods. The shifter is created by placing a key at 
-// the front of the shifter, with the rest of the alphabet following normally.
+// CaesarKey, a subclass of Substitution, creates a specific type of shifter using a
+// passed key to be used in substitution's encrypt and decrypt methods.
 
 public class CaesarKey extends Substitution {
 
