@@ -6,15 +6,15 @@ import java.util.*;
 // Programming Assignment 0: Ciphers
 // Sean Eglip
 
-// Given a 'shift' integer, CaesarShift, a subclass of Substitution, creates a specific 
+// CaesarShift, a subclass of Substitution, creates a specific 
 // type of shifter to be used in Substitution's encrpyt and decrypt methods.
 
 public class CaesarShift extends Substitution {
 
     // Behavior:
-    //      - This constructor creates a shifter and sets substitution's shifter to it.
-    //      - The shifter is created by moving all characters within the encodable range 
-    //      - a certain amount of times, with that being determined by a passed 'shift' parameter.
+    //      - This constructor creates a CaesarShift cipher to change each of an input's
+    //      - characters to a specific shifter. The shifter is created by moving all characters
+    //      - within the encodable range a certain amount of times.
     // Exceptions:
     //      - Throws an IllegalArgumentException if the shift value is less than or equal to 0.
     // Parameter:

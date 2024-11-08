@@ -5,8 +5,7 @@
 // Sean Eglip
 
 // Substitution extends the Cipher class to implement its encrypt and decrypt methods
-// by substituting each corresponding input character with their own unique output character
-// based off a shifter field that can be passed at initialization or set manually.
+// by substituting each corresponding input character with their own unique output character.
 
 public class Substitution extends Cipher {
     private String shifter;
@@ -22,6 +21,7 @@ public class Substitution extends Cipher {
     // Throws an IllegalArgumentException if the length of the shifter doesn't match the number 
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
+    // The shifter should be non-null.
     public Substitution(String shifter) {
         setShifter(shifter);
     }
@@ -30,6 +30,7 @@ public class Substitution extends Cipher {
     // Throws an IllegalArgumentException if the length of the shifter doesn't match the number 
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
+    // The shifter should be non-null.
     public void setShifter(String shifter) {
         checkShifter(shifter);
         this.shifter = shifter;
@@ -39,6 +40,7 @@ public class Substitution extends Cipher {
     // Throws an IllegalArgumentException if the length of the shifter doesn't match the number 
     // of characters within the cipher's encodable range, the shifter contains a 
     // duplicate character, or if any individual character falls outside the encodable range.
+    // The shifter should be non-null.
     private void checkShifter(String shifter) {
         if (shifter.length() != Cipher.TOTAL_CHARS) {
             throw new IllegalArgumentException("Shifter length should match the" 
